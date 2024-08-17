@@ -1,0 +1,63 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body id="page-top" class="{{body_class}}" data-template="base.twig">
+	<div class="content-wrapper">
+		{{ function('wp_body_open') }}
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand" href="{{ site.link }}">{{site.name}}</a>
+				<button class="navbar-toggler text-uppercase font-weight-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					{% include "menu.twig" with {'items': menu.get_items} %}
+					
+				</div>
+			</div>
+		</nav>
+		<!--<header class="masthead bg-primary text-white text-center" >
+			{% block header %}
+				<div class="wrapper">
+					<h1 class="hdr-logo" role="banner">
+						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+					</h1>
+					{# cover image or text #}
+					
+				</div>
+			{% endblock %}
+		</header>
+		-->
+
+		<div id="content" role="main">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper">
+				
+						<div class="container">
+						<br/>
+							{% block content %}
+							{% endblock %}
+						
+						</div>
+			</div>
+			
+		</div>
+
+		{% block footer %}
+			<footer class="footer text-center">
+				{% include 'footer.twig' %}
+				{{ function('wp_footer') }}
+			</footer>
+		{% endblock %}
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="{{ site.theme.link }}/scripts.js"></script>
+	</body>
+</html>

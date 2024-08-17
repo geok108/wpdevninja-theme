@@ -1,0 +1,25 @@
+{% if menu %}
+	<ul class="navbar-nav ms-auto">
+	{% for item in items %}
+		<li class="{{ item.classes | join(' ') }} nav-item mx-0 mx-lg-1">
+			<a target="{{ item.target }}" href="{{ item.link }}" class="nav-link py-3 px-0 px-lg-3 rounded">{{ item.title }}</a>
+			{# {% include "menu.twig" with {'items': item.children} %} #}
+		</li>
+		
+	{% endfor %}
+	{# Account nav menu #}
+	{% if user %}
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42 nav-item mx-0 mx-lg-1">
+			<a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{site.link}}/account">Account</a>
+		</li>
+	{% else %}
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42 nav-item mx-0 mx-lg-1 loginListItem">
+			<a class="nav-link py-3 px-0 px-lg-3 rounded loginBorder" href="{{site.link}}/login">Login</a>
+		</li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42 nav-item mx-0 mx-lg-1">
+			<a class="nav-link py-3 px-0 px-lg-3 rounded registerBorder" href="{{site.link}}/register">Register</a>
+		</li>
+	{% endif %}
+	</ul>
+	
+{% endif %}
