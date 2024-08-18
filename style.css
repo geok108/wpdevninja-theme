@@ -77,8 +77,8 @@ Text Domain: wpdevninja
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #1abc9c;
-  --bs-link-hover-color: #15967d;
+  --bs-link-color: #212222;
+  --bs-link-hover-color: #3b3d3d;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -10924,8 +10924,8 @@ html {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {
@@ -10943,13 +10943,13 @@ html {
     color: #fff;
     background: #1abc9c;
   }
-  #mainNav.navbar-shrink {
+  /* #mainNav.navbar-shrink {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.5em;
-  }
+  } */
 }
 .form-floating input.form-control,
 .form-floating textarea.form-control {
@@ -11075,8 +11075,11 @@ html {
 
 @media (min-width: 992px) {
   .loginListItem{
-    margin-left: 13rem!important;
+    margin-left: 5rem!important;
   }
+  .ms-auto {
+    margin-left: 5rem!important;
+ } 
   .loginBorder {
     border: 2px solid var(--bs-primary);
     padding: 5px!important;
@@ -11141,5 +11144,23 @@ html {
     background-color: var(--bs-primary);
     max-width: max-content;
     padding: 5px!important;
+  }
+}
+
+@media (min-width: 1200px) {
+ .loginListItem{
+    margin-left: 10rem!important;
+  }
+ .ms-auto {
+    margin-left: 10rem!important;
+ } 
+}
+
+@media (min-width: 1400px) {
+  .loginListItem{
+    margin-left: 15rem!important;
+  }
+  .ms-auto {
+    margin-left: 15rem!important;
   }
 }
