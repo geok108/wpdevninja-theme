@@ -11065,7 +11065,7 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 60px; /* Add padding to prevent content overlap */
+  padding-top: 40px; /* Add padding to prevent content overlap */
 
 }
 
@@ -11162,5 +11162,37 @@ html {
   }
   .ms-auto {
     margin-left: 15rem!important;
+  }
+}
+
+.footer-widgets {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: var(--bs-primary);
+}
+
+.footer-column {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.footer-column .widget {
+  margin-bottom: 20px;
+}
+
+.footer-column .widget-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer-widgets {
+      flex-direction: column;
+  }
+
+  .footer-column {
+      margin-bottom: 20px;
   }
 }
